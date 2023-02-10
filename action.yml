@@ -39,7 +39,7 @@ runs:
       shell: bash
 
     - name: Generate Doxygen Documentation
-      run: doxygen ${{ inputs.config_file }}
+      run: make docs
       shell: bash
       
     - name: Create .nojekyll (ensures pages with underscores work on gh pages)
