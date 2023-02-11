@@ -39,7 +39,11 @@ runs:
       shell: bash
 
     - name: Generate Doxygen Documentation
-      run: make docs
+      run: doxygen ${{ inputs.config_file }}
+      shell: bash
+
+    - name: Copy images to docs/html
+      run: cp -rv images docs/html
       shell: bash
       
     - name: Create .nojekyll (ensures pages with underscores work on gh pages)
